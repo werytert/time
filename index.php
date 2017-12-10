@@ -1,5 +1,9 @@
 <?php
 session_start();
+$f = file('hk');
+//echo implode(',',$f);
+$_SESSION['t']['hours'] = 15;//intval($f[0]);
+$_SESSION['chas_pos'] = intval($f[1]);
 function returntime()
 {
     if ($_SESSION['t']['hours'] < 00) {
@@ -34,12 +38,20 @@ if ($_POST['type'] === 'just_time') {
     just_time();
 } else if ($_POST['type'] === 'plus_one')
 {
-$_SESSION['chas_pos'] = $_SESSION['chas_pos']+1;
-$_SESSION['chas_pos'] = $_SESSION['chas_pos']%24;
-just_time();
+    $_SESSION['chas_pos'] = $_SESSION['chas_pos']+1;
+    $_SESSION['chas_pos'] = $_SESSION['chas_pos']%24;
+    just_time();
+    $file = 'hk';
+    file_put_contents($file, $_SESSION['t']['hours'] . PHP_EOL);
+    $file = fopen("hk", "a");
+    fwrite($file, $_SESSION['chas_pos']);
 } else if ($_POST['type'] === 'minus_one') {
     $_SESSION['chas_pos'] = $_SESSION['chas_pos'] - 1;
     $_SESSION['chas_pos'] = $_SESSION['chas_pos']%24;
     just_time();
+    $file = 'hk';
+    file_put_contents($file, $_SESSION['t']['hours'] . PHP_EOL);
+    $file = fopen("hk", "a");
+    fwrite($file, $_SESSION['chas_pos']);
 }
 ?>

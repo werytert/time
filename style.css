@@ -7,7 +7,7 @@ body {
 
 h1 {
     color:black;
-    font-size: 1000%;
+    font-size: 11vw;
 }
 
 .butt
@@ -26,8 +26,9 @@ h1 {
     height: 40%;
     width: 40%;
     position: absolute;
-    left:25%;
-    top:15%;
+    left:23%;
+    top:20%;
+
     margin: auto;
 }
 
