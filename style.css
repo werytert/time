@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(240, 240, 240);
+
+}
+
+
+
+h1 {
+    color:black;
+    font-size: 1000%;
+}
+
+.butt
+{
+    background-color: rgba(128, 128, 238, 0);
+    border: none;
+    height: 100%;
+    width: 100%;
+    font-size: 200%;
+
+
+}
+
+.center
+{
+    height: 40%;
+    width: 40%;
+    position: absolute;
+    left:25%;
+    top:15%;
+    margin: auto;
+}
+
+.left, .right {
+
+    position:absolute;
+    top:40%;
+
+    width: 10%;
+    height: 10%;
+    float: right;
+    border: 2px solid lightblue;
+    border-radius: 10px;
+
+
+}
+.left {
+    left:5%;
+
+
+}
+
+.right {
+    left:85%;
+}
